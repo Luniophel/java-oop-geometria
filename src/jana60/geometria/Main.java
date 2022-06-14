@@ -18,7 +18,8 @@ public class Main {
 		rettangolo1.altezza = scan.nextInt();
 
 		// Stampo Perimetro
-		rettangolo1.stampaPerimetro();
+		System.out.println("Ecco i risultati:\n");
+		rettangolo1.stampaRisultati();
 
 	}
 

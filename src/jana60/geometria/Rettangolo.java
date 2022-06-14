@@ -13,9 +13,14 @@ public class Rettangolo {
 		return perimetro;
 	}
 
-	void stampaPerimetro() {
-		System.out.println("Il perimetro del rettangolo è: " + calcolaPerimetro());
-
-	}
 	// Metodo per Area
+	int calcolaArea() {
+		int area = base * altezza;
+		return area;
+	}
+
+	// Stampa risultati
+	void stampaRisultati() {
+		System.out.println("P = " + calcolaPerimetro() + ";\n" + "A = " + calcolaArea() + ";");
+	}
 }
