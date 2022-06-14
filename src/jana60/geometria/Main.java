@@ -46,15 +46,18 @@ public class Main {
 			}
 		} while (valid == false);
 
+		// Chiedo i valori dei rettangoli all'utente e costruisco gli array che li
+		// contengono
 		for (int i = 0; i < 5; i++) {
-			// Se il valore inserito è minore di zero, ripeti il ciclo
-
-			do {// Se inserisco valori negativi, il ciclo si ripete per l'iterazione in corso
+			// Se inserisco valori negativi, il ciclo si ripete per l'iterazione in corso
+			do {
 				// Chiedo i valori all'utente e li raccolgo nell'array
-				System.out.print("Quanto misura la base del rettangolo numero " + (i + 1) + " in " + unit + "? ");
+				System.out.println("Dichiara i dati del " + (i + 1) + "° rettangolo in " + unit + ":");
+				System.out.print("Base = ");
 				bRettangolo[i] = scan.nextInt();
-				System.out.print("Quanto misura l'altezza del rettangolo numero " + (i + 1) + " in " + unit + "? ");
+				System.out.print("Altezza = ");
 				hRettangolo[i] = scan.nextInt();
+				System.out.println("______");
 
 				// Controllo che i valori siano entrambi maggiori di zero
 				if (bRettangolo[i] > 0 && hRettangolo[i] > 0) {
@@ -63,7 +66,7 @@ public class Main {
 					valid = false;
 					System.out.println("\nERRORE: Hai inserito valori non validi!\n");
 				}
-			} while (valid == false);
+			} while (valid == false); // Diventa true quando i valori sono maggiori di 0
 		}
 
 		// Recap dei valori scelti dall'utente
@@ -88,7 +91,8 @@ public class Main {
 		}
 
 		// Stampo l'Area del rettangolo più grande
-		System.out.println("\nL'area maggiore è uguale a: " + aMaggiore + unit + "\u00B2");
+		System.out
+				.println("\nTra tutti i rettangoli, quello con l'area maggiore misura " + aMaggiore + unit + "\u00B2");
 		scan.close();
 	}
 
