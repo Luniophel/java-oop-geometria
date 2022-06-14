@@ -28,18 +28,30 @@ public class Main {
 		int[] bRettangolo = new int[5];
 		int[] hRettangolo = new int[5];
 
+		boolean valid = false;
 		for (int i = 0; i < 5; i++) {
-			// Chiedo i valori all'utente e li raccolgo nell'array
-			System.out.println("Quanto misura la base del rettangolo numero " + (i + 1) + "?");
-			bRettangolo[i] = scan.nextInt();
-			System.out.println("Quanto misura l'altezza del rettangolo numero " + (i + 1) + "?");
-			hRettangolo[i] = scan.nextInt();
+			// Se il valore inserito è minore di zero, ripeti il ciclo
+
+			do {// Se inserisco valori negativi, il ciclo si ripete per l'iterazione in corso
+				// Chiedo i valori all'utente e li raccolgo nell'array
+				System.out.println("Quanto misura la base del rettangolo numero " + (i + 1) + "?");
+				bRettangolo[i] = scan.nextInt();
+				System.out.println("Quanto misura l'altezza del rettangolo numero " + (i + 1) + "?");
+				hRettangolo[i] = scan.nextInt();
+				if (bRettangolo[i] > 0 && hRettangolo[i] > 0) {
+					valid = true;
+				} else {
+					valid = false;
+					System.out.println("\nERRORE: " + "Non puoi inserire numeri negativi!\n");
+				}
+			} while (valid == false);
 		}
 
 		// Recap dei valori scelti dall'utente
 		System.out.println("\nRiepilogando:");
 		for (int i = 0; i < 5; i++) {
-			System.out.println("Il rettangolo numero " + (i + 1) + " ha i seguenti valori: \n" + "b = " + bRettangolo[i] + "; " + "h = " + hRettangolo[i] + ";");
+			System.out.println("Il rettangolo numero " + (i + 1) + " ha i seguenti valori: ");
+			System.out.println("b = " + bRettangolo[i] + "; " + "h = " + hRettangolo[i] + ";");
 		}
 
 		// Calcolo l'Area dei rettangoli
