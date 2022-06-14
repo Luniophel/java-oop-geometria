@@ -36,11 +36,28 @@ public class Main {
 			hRettangolo[i] = scan.nextInt();
 		}
 
+		// Recap dei valori scelti dall'utente
+		System.out.println("\nRiepilogando:");
 		for (int i = 0; i < 5; i++) {
-			System.out.println("\nIl rettangolo numero " + (i + 1) + " ha i seguenti valori: \n" + "b = "
-					+ bRettangolo[i] + "; " + "h = " + hRettangolo[i] + ";");
+			System.out.println("Il rettangolo numero " + (i + 1) + " ha i seguenti valori: \n" + "b = " + bRettangolo[i] + "; " + "h = " + hRettangolo[i] + ";");
 		}
 
+		// Calcolo l'Area dei rettangoli
+		int[] aRettangolo = new int[5];
+		int aMaggiore = 0;
+
+		for (int i = 0; i < 5; i++) {
+			mioRettangolo.base = bRettangolo[i];
+			mioRettangolo.altezza = hRettangolo[i];
+			aRettangolo[i] = mioRettangolo.calcolaArea();
+			// Tengo da parte l'area maggiore
+			if (i > 0 && aRettangolo[i] > aRettangolo[i - 1]) {
+				aMaggiore = aRettangolo[i];
+			}
+		}
+
+		// Stampo l'Area del rettangolo più grande
+		System.out.println("\nL'area maggiore è uguale a: " + aMaggiore);
 		scan.close();
 	}
 
