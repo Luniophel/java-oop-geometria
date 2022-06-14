@@ -21,6 +21,7 @@ public class Main {
 		System.out.println("Ecco i risultati:\n");
 		rettangolo1.stampaRisultati();
 
+		scan.close();
 	}
 
 }
